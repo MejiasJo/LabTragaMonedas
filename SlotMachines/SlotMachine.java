@@ -9,13 +9,15 @@ package SlotMachines;
  * @author Johel M
  */
 public class SlotMachine implements ISlotMachine{
-    int[] numbers = new int[3];
+    int[] numbers = new int[5];
     
     @Override
     public int[] spin() {
-        numbers[0] = (int) (Math.random()*8);
-        numbers[1] = (int) (Math.random()*8);
-        numbers[2] = (int) (Math.random()*8);
+        numbers[0] = (int) (Math.random()*3);
+        numbers[1] = (int) (Math.random()*3);
+        numbers[2] = (int) (Math.random()*3);
+        numbers[3] = (int) (Math.random()*3);
+        numbers[4] = (int) (Math.random()*3);
         return numbers;
     }
     

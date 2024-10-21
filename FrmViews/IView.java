@@ -10,6 +10,6 @@ package FrmViews;
  * @author Johel M
  */
 public interface IView {
-    public void display(int num1,int num2,int num3);
+    public void display(int num1,int num2,int num3,int num4,int num5);
 
 }

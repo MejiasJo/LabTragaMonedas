@@ -45,7 +45,7 @@ public class ControllerSlotMachine extends Thread {
         do {
             i++;
             numbers = machine.spin();
-            frm.display(numbers[0], numbers[1], numbers[2]);
+            frm.display(numbers[0], numbers[1], numbers[2],numbers[3],numbers[4]);
             stopScreen(70);
         } while (i < 40);
         sound("src/Sound/mixkit-magical-coin-win-1936.wav");

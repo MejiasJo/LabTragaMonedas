@@ -39,81 +39,57 @@ public class FrmSlotMachine extends javax.swing.JFrame implements IView{
         jPanel1 = new javax.swing.JPanel();
         lbNum2 = new javax.swing.JLabel();
         lbNum1 = new javax.swing.JLabel();
+        IbNum4 = new javax.swing.JLabel();
+        IbNum5 = new javax.swing.JLabel();
         lbNum3 = new javax.swing.JLabel();
-        btnSpin = new javax.swing.JToggleButton();
+        txtSpin = new javax.swing.JLabel();
+        Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lbNum2.setText("jLabel1");
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(lbNum2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 80, 80));
 
-        lbNum1.setText("jLabel1");
+        lbNum1.setToolTipText("");
+        jPanel1.add(lbNum1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 80, 80));
+        jPanel1.add(IbNum4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, 80, 80));
+        jPanel1.add(IbNum5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, 80, 80));
+        jPanel1.add(lbNum3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 70, 80));
 
-        lbNum3.setText("jLabel1");
-
-        btnSpin.setText("Girar");
-        btnSpin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSpinActionPerformed(evt);
+        txtSpin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtSpinMouseClicked(evt);
             }
         });
+        jPanel1.add(txtSpin, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, 110, 120));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addComponent(lbNum1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lbNum2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbNum3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(77, 77, 77)
-                .addComponent(btnSpin, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(94, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbNum2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbNum3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbNum1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(btnSpin)))
-                .addContainerGap(220, Short.MAX_VALUE))
-        );
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/5 slots.jpg"))); // NOI18N
+        jPanel1.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 470));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSpinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSpinActionPerformed
+    private void txtSpinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSpinMouseClicked
         controller.sound("src/Sound/mixkit-coins-handling-1939.wav");
         controller.stopScreen(170);
         ControllerSlotMachine controller2 = new ControllerSlotMachine(controller.getMachine(),controller.getFrm());
         controller2.start();
-    }//GEN-LAST:event_btnSpinActionPerformed
+    }//GEN-LAST:event_txtSpinMouseClicked
 
     /**
      * @param args the command line arguments
@@ -151,18 +127,25 @@ public class FrmSlotMachine extends javax.swing.JFrame implements IView{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton btnSpin;
+    private javax.swing.JLabel Fondo;
+    private javax.swing.JLabel IbNum4;
+    private javax.swing.JLabel IbNum5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lbNum1;
     private javax.swing.JLabel lbNum2;
     private javax.swing.JLabel lbNum3;
+    private javax.swing.JLabel txtSpin;
     // End of variables declaration//GEN-END:variables
 
     @Override
-    public void display(int num1, int num2, int num3) {
-        lbNum1.setText(String.valueOf(num1));
-        lbNum2.setText(String.valueOf(num2));
-        lbNum3.setText(String.valueOf(num3));
+    public void display(int num1, int num2, int num3,int num4,int num5) {
+        
+        lbNum1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/"+num1+".png")));
+        lbNum2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/"+num2+".png")));
+        lbNum3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/"+num3+".png")));
+        IbNum4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/"+num4+".png")));
+        IbNum5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/"+num5+".png")));
+        
     }
     
     public void sound() {
